@@ -1,0 +1,27 @@
+BINARY COUNTING THOUGHT PROCESS
+
+1
+10 => 1 + 0
+11 => 1 + 1
+100 => 10 + 0
+101 => 10 + 1
+
+"base" is fifo
+use queue to implement "base"
+0,1,alternating can be for looped
+
+enq 1
+1 => 1
+	deq 1
+10 => 1 + 0
+		enq 10
+11 => 1 + 1
+		enq 11
+	deq
+100 => 10 + 0
+		enq 100
+101 => 10 + 1
+	deq 
+	enq 101
+
+etc etc...
