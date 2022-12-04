@@ -1,0 +1,25 @@
+ZEROS AND NINES THOUGHT PROCESS 
+
+Write a class ZerosAndNines that asks the user to input an integer n, 
+and then (using a queue) calculates and prints the least positive 
+integer x that is a multiple of n and whose digits are only zeros or nines.
+
+---
+
+9
+90 => 9 + 0
+99 => 9 + 9
+900 => 90 + 0
+909 => 90 + 9
+990 => 99 + 0
+...
+
+Like binary counting, but swap 1 for 9
+
+While loop
+Check if each one is divisible by n. 
+Print if true.
+
+Check for edge case if n = 0
+
+Seems like bad time complexity.../slow -> more efficient how?

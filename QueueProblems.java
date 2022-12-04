@@ -30,7 +30,7 @@ public class QueueProblems {
 	}
 
 	/**
-	 * Counts in binary up to n. Result is printed.
+	 * Counts in binary from 1 to n. Result is printed.
 	 * @param n
 	 */
 	public static void generateBinaryNumber(int n) {
@@ -50,11 +50,29 @@ public class QueueProblems {
 			appendOne = !appendOne;
 		}
 	}
+
+	/**
+	 * Prints the least positive integer x such that 
+	 * x is composed of 0s and 9s and is divisible by n.
+	 * @param n
+	 */
+
+	// CHANGE THIS LATER
 	
 	public static void zerosAndNines(int n) {
-		System.out.println("When n is " + n);
 		Queue<String> q = new LinkedList<>();
-		
+		String baseNum = "9";
+		boolean appendNine = false;
+		q.add("9");
+		for (int i = 0; i < n - 1; i++) {
+			if (i % 2 == 0)
+				baseNum = q.poll();
+			String appendNum = appendNine ? "9" : "0";
+			String fullNum = baseNum + appendNum;
+			System.out.println(fullNum);
+			q.add(fullNum);
+			appendOne = !appendOne;
+		}
 	}
 
 	public static void main(String[] args) {
