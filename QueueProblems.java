@@ -52,33 +52,44 @@ public class QueueProblems {
 	}
 
 	/**
-	 * Prints the least positive integer x such that 
-	 * x is composed of 0s and 9s and is divisible by n.
+	 * Calculates and prints the least positive 
+	 * integer x that is a multiple of n and 
+	 * whose digits are only zeros or nines.
 	 * @param n
 	 */
 
-	// CHANGE THIS LATER
+	 // TODO code cleanup
 	
 	public static void zerosAndNines(int n) {
 		Queue<String> q = new LinkedList<>();
+		if (n == 0) {
+			System.out.println("No number can satisfy that requirement.");
+		}
+		int i = 0;
+		String x = "9";
 		String baseNum = "9";
 		boolean appendNine = false;
 		q.add("9");
-		for (int i = 0; i < n - 1; i++) {
+		if (9 % n == 0) {
+			System.out.println(9);
+			return;
+		}
+		while (Integer.valueOf(x) % n != 0) {
 			if (i % 2 == 0)
 				baseNum = q.poll();
 			String appendNum = appendNine ? "9" : "0";
-			String fullNum = baseNum + appendNum;
-			System.out.println(fullNum);
-			q.add(fullNum);
-			appendOne = !appendOne;
+			x = baseNum + appendNum;
+			q.add(x);
+			appendNine = !appendNine;
+			i++;
 		}
+		System.out.println(x);
 	}
 
 	public static void main(String[] args) {
 		// starbucks();
-		generateBinaryNumber(in.nextInt());
-//	zerosAndNines(in.nextInt());
+		// generateBinaryNumber(in.nextInt());
+		zerosAndNines(in.nextInt());
 		in.close();
 	}
 }

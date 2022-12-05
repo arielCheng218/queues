@@ -20,6 +20,6 @@ While loop
 Check if each one is divisible by n. 
 Print if true.
 
-Check for edge case if n = 0
+Check for edge case if n = 0 or if n is prime
 
 Seems like bad time complexity.../slow -> more efficient how?
