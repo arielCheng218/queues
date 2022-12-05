@@ -74,7 +74,7 @@ public class QueueProblems {
 			System.out.println(9);
 			return;
 		}
-		while (Integer.valueOf(x) % n != 0) {
+		while (Long.valueOf(x) % n != 0) {
 			if (i % 2 == 0)
 				baseNum = q.poll();
 			String appendNum = appendNine ? "9" : "0";
