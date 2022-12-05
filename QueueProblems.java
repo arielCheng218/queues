@@ -57,23 +57,18 @@ public class QueueProblems {
 	 * whose digits are only zeros or nines.
 	 * @param n
 	 */
-
-	 // TODO code cleanup
 	
 	public static void zerosAndNines(int n) {
 		Queue<String> q = new LinkedList<>();
-		if (n == 0) {
-			System.out.println("No number can satisfy that requirement.");
+		if (n == 0 || n == 9) {
+			System.out.println(n);
+			return;
 		}
 		int i = 0;
 		String x = "9";
 		String baseNum = "9";
 		boolean appendNine = false;
 		q.add("9");
-		if (9 % n == 0) {
-			System.out.println(9);
-			return;
-		}
 		while (Long.valueOf(x) % n != 0) {
 			if (i % 2 == 0)
 				baseNum = q.poll();
